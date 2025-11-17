@@ -21,7 +21,7 @@ séance 1 : Vision par ordinateur.
     -   **Nombre de classes :** 15 classes distinctes.
     -   **Espèces de plantes couvertes :** Poivron (Pepper), Pomme de terre (Potato), et Tomate (Tomato).
     -  **Quelques images de dataset:**
-     ![](/PlantVillage/notebook/affichage_de_samples.png)
+     ![](/notebook/affichage_de_samples.png)
 
 -   **Prétraitements & Pipeline de Données :**
     -   **Division des données :** Le jeu de données a été séparé en trois ensembles distincts avec une graine fixe pour la reproductibilité :
@@ -60,10 +60,10 @@ séance 1 : Vision par ordinateur.
 - **Accuracy :** L'accuracy finale obtenue sur l'ensemble de test est de **86.24%**.
 - **F1-Score :** Le F1-Score (pondéré) sur l'ensemble de test est de **0.86**.
 - **Courbes d’entraînement :** Les courbes de `loss` et `accuracy` pour l'entraînement et la validation démontrent la bonne convergence du modèle sans sur-apprentissage majeur.  
-  ![Courbes d'entraînement](/PlantVillage/notebook/les_courbes_de_loss_et_accuracy.png)
+  ![Courbes d'entraînement](/notebook/les_courbes_de_loss_et_accuracy.png)
 
 - **Matrice de confusion :** La matrice de confusion sur l'ensemble de test permet d'analyser les erreurs de classification du modèle entre les différentes classes.  
-  ![Matrice de confusion](/PlantVillage/notebook/La_matrice_de_confusion.png)
+  ![Matrice de confusion](/notebook/La_matrice_de_confusion.png)
 
 ## 6. Reproduction
 ### Environnement
