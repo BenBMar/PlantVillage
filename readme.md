@@ -79,24 +79,78 @@ séance 1 : Vision par ordinateur.
   ![Matrice de confusion](/notebook/La_matrice_de_confusion.png)
 
 ## 6. Reproduction
-### Environnement
-- **Python :** 3.11+  
-- **Bibliothèques principales :** (voir le fichier `requirements.txt`)
-  ```
-  tensorflow==2.10.0
-  tensorflow-datasets==4.6.0
-  matplotlib==3.5.3
-  numpy==1.23.5
-  seaborn==0.12.1
-  ```
 
-### Exécution
-1. Cloner le dépôt :  
-   `git clone https://github.com/votre-utilisateur/votre-projet.git`
-2. Installer les dépendances :  
-   `pip install -r requirements.txt`
-3. Lancer le notebook principal qui contient le code pour le chargement, l'entraînement et l'évaluation :  
-   `notebook/plantvillage-classification.ipynb`
+Pour reproduire cet environnement et exécuter le projet, veuillez suivre les étapes ci-dessous.
+
+### Prérequis
+-   Git
+-   Python 3.11 ou supérieur
+-   `pip` et `venv` (généralement inclus avec Python)
+
+### Étapes d'installation
+
+1.  **Cloner le dépôt :**
+    Ouvrez un terminal et clonez ce dépôt sur votre machine locale, puis naviguez dans le répertoire du projet.
+    ```bash
+    git clone https://github.com/BenBMar/PlantVillage
+    cd votre-projet
+    ```
+
+2.  **Créer et activer l'environnement virtuel :**
+    Pour isoler les dépendances du projet, il est fortement recommandé d'utiliser un environnement virtuel.
+
+    ```bash
+    # Créer l'environnement (nommé 'venv')
+    python -m venv venv
+    ```
+
+    Ensuite, activez-le. La commande varie selon votre système d'exploitation :
+
+    ```bash
+    # Sur Windows (cmd.exe ou PowerShell)
+    venv\Scripts\activate
+
+    # Sur macOS / Linux (bash ou zsh)
+    source venv/bin/activate
+    ```
+    Une fois activé, votre terminal devrait afficher `(venv)` au début de la ligne de commande.
+
+3.  **Installer les dépendances :**
+    Une fois l'environnement activé, installez toutes les bibliothèques nécessaires à partir du fichier `requirements.txt`.
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+### Fichier `requirements.txt`
+
+Le fichier `requirements.txt` doit contenir les versions exactes des bibliothèques utilisées pour garantir la reproductibilité. **Note : `tensorflow-datasets` ne doit pas figurer dans cette liste car il n'est pas utilisé dans la version finale du projet.**
+
+Pour générer ce fichier à partir de votre propre environnement, activez-le et exécutez : `pip freeze > requirements.txt`
+
+Un exemple de contenu pour le fichier `requirements.txt` pourrait être :
+```
+tensorflow==2.18.0
+matplotlib==3.7.2
+numpy==1.26.4 
+seaborn==0.12.2
+scikit-learn==1.2.2
+```
+
+### Exécution du Notebook
+
+1.  **Lancer Jupyter:**
+    Assurez-vous que votre environnement virtuel est toujours activé, puis lancez Jupyter Lab ou Jupyter Notebook.
+    ```bash
+    jupyter lab
+    ```
+    ou
+    ```bash
+    jupyter notebook
+    ```
+
+2.  **Ouvrir et exécuter le notebook :**
+    Naviguez jusqu'au fichier suivant et exécutez les cellules dans l'ordre :
+    `notebook/plantvillage-classification.ipynb`
 
 ## 7. Auteurs
 - **Étudiant 1 :** Marouane
