@@ -40,7 +40,20 @@ séance 1 : Vision par ordinateur.
 
 
 ## 4. Modèle
-- **Architecture :** Réseau de Neurones Convolutifs (CNN) séquentiel, composé de plusieurs couches de convolution (`Conv2D`), de pooling (`MaxPooling2D`) et de couches denses (`Dense`) pour la classification. Une régularisation par `Dropout` est également utilisée.  
+-   **Architecture :** Réseau de Neurones Convolutifs (CNN) séquentiel, conçu pour l'extraction de caractéristiques et la classification. La structure est composée de plusieurs blocs, chacun optimisé pour une tâche spécifique :
+
+    1.  **Blocs de Convolution (x3) :**
+        -   Trois blocs successifs de `Conv2D` (avec 32, 64, puis 128 filtres) suivis par une `MaxPooling2D`.
+        -   Ces blocs sont responsables de l'extraction des caractéristiques visuelles des images (bords, textures, formes).
+        -   Chaque bloc est régularisé par une `BatchNormalization` pour stabiliser l'apprentissage et une couche `Dropout` pour réduire le sur-apprentissage.
+
+    2.  **Bloc de Classification (Tête) :**
+        -   Une couche `Flatten` pour transformer les cartes de caractéristiques 2D en un vecteur 1D.
+        -   Deux couches `Dense` cachées (de 256 puis 128 neurones) qui agissent comme le "cerveau" du classifieur. Ces couches sont également régularisées avec `BatchNormalization` et `Dropout`.
+        -   Une couche `Dense` finale avec 15 neurones et une activation `softmax`, qui produit la probabilité pour chacune des 15 classes de maladies.
+
+    **Nombre total de paramètres :** Environ 29.6 millions. 
+
 - **Framework :** TensorFlow 2.18 avec l'API de haut niveau Keras.  
 - **Hyperparamètres & Stratégie d'Entraînement :**
     -   **Époques (`epochs`) :** Jusqu'à 36. L'entraînement peut s'arrêter plus tôt grâce au callback `EarlyStopping`.
